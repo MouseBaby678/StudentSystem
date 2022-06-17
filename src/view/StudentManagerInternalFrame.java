@@ -519,11 +519,11 @@ public class StudentManagerInternalFrame extends JInternalFrame {
             JOptionPane.showMessageDialog(null, "家庭住址不能为空!");
             return;
         }
-        if(s_secondaryJCB.getSelectedIndex()==0){
+        if(secondaryJCB.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null, "请选择所在学院!");
             return;
         }
-        if(s_classJCB.getSelectedIndex()==0){
+        if(studentClassJCB.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null, "请选择所在班级!");
             return;
         }
