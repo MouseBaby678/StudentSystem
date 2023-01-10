@@ -8,7 +8,7 @@ public class DbUtil {
 
     private String dbUrl = "jdbc:mysql://localhost:3306/studentinfo?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
     private String dbUserName = "root";
-    private String dbPassword = "admin";
+    private String dbPassword = "123321";
     private String jdbcName = "com.mysql.jdbc.Driver";
 
     //获取数据库连接
