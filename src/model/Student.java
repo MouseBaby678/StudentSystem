@@ -52,6 +52,10 @@ public class Student {
         this.classId = classId;
     }
 
+    public Student(String studentId) {
+        this.studentId = studentId;
+    }
+
     public String getSecondary_name() {
         return secondary_name;
     }

@@ -199,6 +199,7 @@ public class StudentManagerInternalFrame extends JInternalFrame {
         studentIdTxt.setFont(new Font("微软雅黑", Font.PLAIN, 16));
         studentIdTxt.setColumns(10);
         studentIdTxt.setBounds(234, 27, 149, 24);
+        studentIdTxt.setEditable(false);
         panel_1.add(studentIdTxt);
 
         JLabel lblNewLabel_3_1_1 = new JLabel("\u51FA\u751F\u65E5\u671F");
@@ -457,7 +458,7 @@ public class StudentManagerInternalFrame extends JInternalFrame {
         String address = this.addressTxt.getText();
         int id = 0;
         //获取数据库中ID
-        Student selectedStu = new Student(studentId, name);
+        Student selectedStu = new Student(studentId);
         Connection con = null;
         try {
             con = dbUtil.getCon();

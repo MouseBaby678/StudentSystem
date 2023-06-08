@@ -29,20 +29,19 @@ public class StudentDao {
 
     //学生查询
     public ResultSet list(Connection con, Student student) throws Exception {
-        StringBuilder strb = new StringBuilder("select *from student stu,secondary scd,studentclass stc where stu.secondaryId=scd.id AND stu.classId=stc.id");
+        StringBuilder strb = new StringBuilder("select *from student_view where 1=1");
         if (StringUtil.isNotEmpty(student.getName())) {
-            strb.append(" and stu.name like '%" + student.getName() + "%'");
+            strb.append(" and name like '%" + student.getName() + "%'");
         }
         if (StringUtil.isNotEmpty(student.getStudentId())) {
-            strb.append(" and stu.studentId like '%" + student.getStudentId() + "%'");
+            strb.append(" and studentId like '%" + student.getStudentId() + "%'");
         }
         if (student.getSecondaryId() != null && student.getSecondaryId() != -1) {
-            strb.append(" and stu.secondaryId =" + student.getSecondaryId());
+            strb.append(" and secondaryId =" + student.getSecondaryId());
         }
         if (student.getClassId() != null && student.getClassId() != -1) {
-            strb.append(" and stu.classId =" + student.getClassId());
+            strb.append(" and classId =" + student.getClassId());
         }
-
         PreparedStatement pstmt = con.prepareStatement(strb.toString());
         return pstmt.executeQuery();
     }
