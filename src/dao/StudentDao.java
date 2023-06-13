@@ -29,7 +29,7 @@ public class StudentDao {
 
     //学生查询
     public ResultSet list(Connection con, Student student) throws Exception {
-        StringBuilder strb = new StringBuilder("select *from student_view where 1=1");
+        StringBuilder strb = new StringBuilder("select *from student_view where 1");
         if (StringUtil.isNotEmpty(student.getName())) {
             strb.append(" and name like '%" + student.getName() + "%'");
         }
